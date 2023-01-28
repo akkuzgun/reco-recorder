@@ -40,7 +40,10 @@ async function startRecording(){
     await setupStream();
     if (stream && audio) {
         mixedStream =new MediaStream([...stream.getTracks(),...audio.getTracks()]);
-        recorder=new MediaRecorder(mixedStream);
+        recorder=new MediaRecorder(mixedStream,{
+        mimeType: "video/mp4; codecs='avc1.4d002a'"
+
+        });
         recorder.ondataavailable= handleDataAvailable;
         recorder.onstop=handleStop;
         recorder.start(200);
@@ -67,7 +70,8 @@ function stopRecording(){
 }
 function handleStop(){
     const blob=new Blob(chunks,{
-        type:'video/mp4'
+        type:'video/mp4', 
+        codecs="avc1.4d002a"
     })
     chunks=[];
     downloadButton.href=URL.createObjectURL(blob);
