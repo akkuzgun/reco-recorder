@@ -71,7 +71,7 @@ function handleStop(){
     })
     chunks=[];
     downloadButton.href=URL.createObjectURL(blob);
-    downloadButton.download="video.mp4";
+    downloadButton.download="video.webm";
     downloadButton.disabled=false;
 
     recordedVideo.src=URL.createObjectURL(blob);
