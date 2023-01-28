@@ -41,7 +41,7 @@ async function startRecording(){
     if (stream && audio) {
         mixedStream =new MediaStream([...stream.getTracks(),...audio.getTracks()]);
         recorder=new MediaRecorder(mixedStream,{
-        mimeType: "video/mp4; codecs='avc1.4d002a'"
+        mimeType: "video/mp4"
 
         });
         recorder.ondataavailable= handleDataAvailable;
