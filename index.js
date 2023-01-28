@@ -70,8 +70,7 @@ function stopRecording(){
 }
 function handleStop(){
     const blob=new Blob(chunks,{
-        type:'video/mp4', 
-        codecs="avc1.4d002a"
+        type:'video/webm'
     })
     chunks=[];
     downloadButton.href=URL.createObjectURL(blob);
