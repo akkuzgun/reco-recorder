@@ -122,6 +122,7 @@
         startStopButton = null,
         downloadButton = null,
         recordedVideo = null;
+      const rc = document.querySelector(".recorded-video-wrap");
 
       async function setupStream() {
         try {
@@ -191,7 +192,7 @@
         recordedVideo.onloadeddata = () => {
           recordedVideo.play();
 
-          const rc = document.querySelector(".recorded-video-wrap");
+          
           rc.classList.toggle("hidden");
           rc.scrollIntoView({ behavior: "smooth", block: "start" });
         };
