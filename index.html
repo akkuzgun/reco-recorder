@@ -148,6 +148,7 @@
       }
 
       async function startRecording() {
+        rc.classList.toggle("hidden");
         await setupStream();
         if (stream && audio) {
           mixedStream = new MediaStream([
@@ -191,7 +192,7 @@
           recordedVideo.play();
 
           const rc = document.querySelector(".recorded-video-wrap");
-          rc.classList.remove("hidden");
+          rc.classList.toggle("hidden");
           rc.scrollIntoView({ behavior: "smooth", block: "start" });
         };
 
