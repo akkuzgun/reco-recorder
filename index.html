@@ -149,7 +149,7 @@
       }
 
       async function startRecording() {
-        rc.classList.toggle("hidden");
+        rc.classList.remove("hidden");
         await setupStream();
         if (stream && audio) {
           mixedStream = new MediaStream([
