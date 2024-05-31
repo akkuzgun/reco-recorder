@@ -150,6 +150,7 @@
 
       async function startRecording() {
         rc.classList.add("hidden");
+        recordedVideo??recordedVideo.pause()
         await setupStream();
         if (stream && audio) {
           mixedStream = new MediaStream([
