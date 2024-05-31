@@ -149,8 +149,11 @@
       }
 
       async function startRecording() {
+        if (recordedVideo.src.includes("blob")) {
+          recordedVideo.pause()
+        }
         rc.classList.add("hidden");
-        recordedVideo??recordedVideo.pause()
+        
         await setupStream();
         if (stream && audio) {
           mixedStream = new MediaStream([
